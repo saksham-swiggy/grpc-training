@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "/calculator_pb";
+option go_package = "./;calculator_pb";
 
 message SumRequest {
   double num1 = 1;
@@ -39,7 +39,7 @@ service CalculatorService{
 
   rpc Sum(SumRequest) returns (SumResponse) {};
 
-  rpc PrimeNumbers(PrimeNumberRequest) returns (stream PrimeNumberResponse) {};
+  rpc PrimeNumber(PrimeNumberRequest) returns (stream PrimeNumberResponse) {};
 
   rpc ComputeAverage(stream ComputeAverageRequest) returns (ComputeAverageResponse) {};
 
